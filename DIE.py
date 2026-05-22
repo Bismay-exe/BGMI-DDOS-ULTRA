@@ -1,9 +1,13 @@
+import os
 import asyncio
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
+from dotenv import load_dotenv
 
-TELEGRAM_BOT_TOKEN = '8655618190:AAEGlXGr9U0iMFuGGaS5d38z6EZQ4cS4QcQ'
-ADMIN_USER_ID = 7287561250
+load_dotenv()
+
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+ADMIN_USER_ID = os.getenv("ADMIN_USER_ID")
 USERS_FILE = 'users.txt'
 attack_in_progress = False
 
